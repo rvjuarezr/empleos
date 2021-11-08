@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/categorias/save}" method="post">
+		<div class="row">
+            <div class="col-md-6"> 
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba el nombre de la categoria" required="required">
+              </div>
+            </div>                
+          </div> 
+          <div class="row">
+            <div class="col-md-6"> 
+              <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <textarea class="form-control" name="descripcion" id="descripcion" rows="2"></textarea>
+              </div> 
+            </div>                
+          </div> 
+          <hr>
+          <button type="submit" title="Guardar el registro." class="btn btn-primary">Guardar</button> 
+	</form>
+</body>
+</html>
