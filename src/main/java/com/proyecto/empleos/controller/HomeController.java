@@ -55,22 +55,13 @@ public class HomeController {
 	
 	@GetMapping("/")
 	public String mostrarHome(Model model) {
-		/*model.addAttribute("mensaje","Hola Mundillo JAVA");
-		model.addAttribute("fecha", new Date());*/
-		
-		String nombre = "Auxiliar de Contabilidad";
-		Date fechaPub = new Date();
-		double salario = 9000.0;
-		boolean vigente = true;
-		
-		model.addAttribute("nombre", nombre);
-		model.addAttribute("fecha", fechaPub);
-		model.addAttribute("salario", salario);
-		model.addAttribute("vigente", vigente);
+		List<Vacante> lista = vacanteService.buscarTodas();
+		model.addAttribute("vacantes",lista);
+		model.addAttribute("fecha",new Date());
 		return "home";//ruta: src/main/resources/templates
 	}
 	
-	public List<Vacante> getVacantes(){
+	/*public List<Vacante> getVacantes(){
 		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 		List<Vacante> lista = new LinkedList<Vacante>();
 		try {
@@ -117,5 +108,5 @@ public class HomeController {
 			System.out.print("Error: "+ex.getMessage());
 		}
 		return lista;
-	}
+	}*/
 }

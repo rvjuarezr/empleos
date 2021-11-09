@@ -1,5 +1,8 @@
 package com.proyecto.empleos.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,18 +11,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.proyecto.empleos.model.Categoria;
+import com.proyecto.empleos.service.CategoriaService;
 
 @Controller
 @RequestMapping(value="/categorias")
 public class CategoriaController {
 	
-	//@Autowired
-	//private CategoriaService categoriaService;
+	@Autowired
+	private CategoriaService categoriaService;
 	
 	@RequestMapping(value="/index", method=RequestMethod.GET)
 	public String mostrarIndex(Model model) {
-		//List<Categoria> lista = categoriaService.buscarTodas();
-		//model.addAttribute("categorias",lista);
+		List<Categoria> lista = categoriaService.buscarTodas();
+		model.addAttribute("categorias",lista);
 		return "categorias/listCategorias";
 	}
 	
