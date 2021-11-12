@@ -4,14 +4,17 @@ import java.util.Date;
 
 public class Vacante {
 
-	private Integer id;
-	private String nombre;
-	private String descripcion;
-	private Date fecha;
-	private Double salario;
-	private Integer destacado;
-	private String imagen="no-image.png";
-
+	private Integer id;//dato numerico de la vacante
+	private String nombre;//titulo de la vacante
+	private String descripcion;//descr de la oferta de trabajo
+	private Date fecha;//fecha de public de la oferta
+	private Double salario;//el salario q se ofrece en la oferta
+	private Integer destacado;// 1 es destacado y 0 no
+	private String imagen="no-image.png";//imagen para cada vacante : logotipo
+	private String estatus;
+	private String detalles;
+	private Categoria categoria;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -61,8 +64,6 @@ public class Vacante {
 		this.destacado = destacado;
 	}
 
-	
-	
 	public String getImagen() {
 		return imagen;
 	}
@@ -71,10 +72,36 @@ public class Vacante {
 		this.imagen = imagen;
 	}
 
+	public String getEstatus() {
+		return estatus;
+	}
+
+	public void setEstatus(String estatus) {
+		this.estatus = estatus;
+	}
+
+	public String getDetalles() {
+		return detalles;
+	}
+
+	public void setDetalles(String detalles) {
+		this.detalles = detalles;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
 	@Override
 	public String toString() {
 		return "Vacante [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", fecha=" + fecha
-				+ ", salario=" + salario + "]";
+				+ ", salario=" + salario + ", destacado=" + destacado + ", imagen=" + imagen + ", estatus=" + estatus
+				+ ", detalles=" + detalles + ", categoria=" + categoria + "]";
 	}
+	
 
 }

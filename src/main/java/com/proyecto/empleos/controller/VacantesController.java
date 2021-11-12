@@ -45,7 +45,7 @@ public class VacantesController {
 	
 	@GetMapping("/create")
 	public String crear(Vacante vacante, Model model) {
-		//model.addAttribute("categorias",categoriaService.buscarTodas());
+		model.addAttribute("categorias",categoriaService.buscarTodas());
 		return "vacantes/formVacante";
 	}
 	
